@@ -4,7 +4,7 @@ const SimpleForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-    console.log('form submitted');
+    console.log(e.target.name.value);
     
 }
 
@@ -12,7 +12,7 @@ const SimpleForm = () => {
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <input type="text" placeholder='Your Name' />
+                <input type="text" placeholder='Your Name' name='name' />
                 <br />
                 <input type="submit" value="Submit" />
             </form>
