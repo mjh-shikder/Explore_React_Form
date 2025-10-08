@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 
 const ControlledField = () => {
 
-    const [password, setPassword]= useState('')
+    const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -10,7 +11,16 @@ const ControlledField = () => {
  }       
 
     const handlePasswordOnchange = e => {
-    console.log(e.target.value);
+        console.log(e.target.value);
+        setPassword(e.target.value);
+
+        if (password.length < 6) {
+            setError('Password must be 6 charecters')
+        }
+        else {
+            setError('')
+        }
+
     
 }
 
@@ -23,8 +33,10 @@ const ControlledField = () => {
                 <input type="password" name="password" placeholder='Password' defaultValue={password} onChange={handlePasswordOnchange} />
                 <br />
                 <input type="submit" value="Submit" />
-
             </form>
+            <p style={{color: 'red' }}>
+                <small>{error} </small>
+            </p>
         </div>
     );
 };
