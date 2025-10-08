@@ -1,9 +1,21 @@
 import React from 'react';
 
 const SimpleForm = () => {
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+    console.log('form submitted');
+    
+}
+
+
     return (
         <div>
-            <h2>Hola</h2>
+            <form onSubmit={handleSubmit}>
+                <input type="text" placeholder='Your Name' />
+                <br />
+                <input type="submit" value="Submit" />
+            </form>
         </div>
     );
 };
