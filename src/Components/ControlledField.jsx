@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 
 const ControlledField = () => {
-
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('submitted');
+        console.log(name, email, password);
 
         if (password.length < 6) {
             setError('6 Charecter password nedded')
@@ -15,12 +16,21 @@ const ControlledField = () => {
         else {
             setError('')
         }
- }       
+    } 
+ 
+    const handleEmailChange = e => {
+        setEmail(e.target.value);
+    }
+
+    const handleNameChange = e => {
+        setName(e.target.value);
+    }
 
     const handlePasswordOnchange = e => {
         console.log(e.target.value);
         setPassword(e.target.value);
 
+    
         // if (password.length < 6) {
         //     setError('Password must be 6 charecters')
         // }
@@ -35,7 +45,9 @@ const ControlledField = () => {
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <input type="email" name="email"   placeholder='Email' />
+                <input type="text" defaultValue={name} onChange={handleNameChange} placeholder='Name'/>
+                <br />
+                <input type="email" name="email" onChange={handleEmailChange} defaultValue={email} placeholder='Email' />
                 <br />
                 <input type="password" name="password" placeholder='Password' defaultValue={password} onChange={handlePasswordOnchange} />
                 <br />

@@ -5,4 +5,5 @@
  * 3. Controlled component. use stat on change of the feild. useful to dynamically handle error
  * 4. handle all controlled feild on one state object 
  * const [formData, setFromData] = useState ({name: '', passowrd: '' , phone: '' })
+ * 5. uncontrolled using useRef()
  */
