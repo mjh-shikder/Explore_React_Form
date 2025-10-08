@@ -8,23 +8,30 @@ const ControlledField = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log('submitted');
+
+        if (password.length < 6) {
+            setError('6 Charecter password nedded')
+        }
+        else {
+            setError('')
+        }
  }       
 
     const handlePasswordOnchange = e => {
         console.log(e.target.value);
         setPassword(e.target.value);
 
-        if (password.length < 6) {
-            setError('Password must be 6 charecters')
-        }
-        else {
-            setError('')
-        }
+        // if (password.length < 6) {
+        //     setError('Password must be 6 charecters')
+        // }
+        // else {
+        //     setError('')
+        // }
 
     
 }
 
-
+ 
     return (
         <div>
             <form onSubmit={handleSubmit}>
