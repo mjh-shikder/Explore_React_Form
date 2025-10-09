@@ -6,4 +6,6 @@
  * 4. handle all controlled feild on one state object 
  * const [formData, setFromData] = useState ({name: '', passowrd: '' , phone: '' })
  * 5. uncontrolled using useRef()
+ * 6. hook form  
+ *
  */
