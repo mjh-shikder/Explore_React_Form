@@ -12,7 +12,7 @@ const FamilyTree = () => {
     return (
         <div className='family-tree'>
             <h2>Family Tree</h2>
-            <Grandpa></Grandpa>
+            <Grandpa asset={asset}></Grandpa>
         </div>
     );
 };
